@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/raframil/artemis/issues"
   },
-  "homepage": "https://github.com/raframil/artemis#readme"
+  "homepage": "https://github.com/raframil/artemis#readme",
+  "dependencies": {
+    "git-commit-msg-linter": "^2.4.4"
+  }
 }
