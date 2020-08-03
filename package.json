@@ -1,0 +1,19 @@
+{
+  "name": "artemis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raframil/artemis.git"
+  },
+  "author": "Rafael Framil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raframil/artemis/issues"
+  },
+  "homepage": "https://github.com/raframil/artemis#readme"
+}
