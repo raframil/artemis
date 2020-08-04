@@ -1,3 +1,6 @@
+import dotenv from 'dotenv'
+dotenv.config()
+
 export default {
   pipedrive: {
     baseUrl: process.env.PIPEDRIVE_BASE_URL || 'https://api.pipedrive.com/v1',
