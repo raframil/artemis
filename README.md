@@ -1,10 +1,11 @@
 # Artemis
 
-## .env
+## Exemplo de arquivo .env
 
 ```
-PIPEDRIVE_TOKEN=chave-pipedrive
-BLING_TOKEN=chave-bling
+PORT=5000
+PIPEDRIVE_API_KEY=chave-pipedrive
+BLING_API_KEY=chave-bling
 ```
 
 ## Requisitos
