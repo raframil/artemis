@@ -1,14 +1,12 @@
 import dotenv from 'dotenv'
 import express from 'express'
+import orderRoutes from './app/routes/order-routes'
 
 dotenv.config()
 
 const PORT = process.env.PORT || 3000
 const app = express()
-
-app.get('/test', (request, response) => {
-  response.json({ msg: 'OK' })
-})
+app.use(orderRoutes)
 
 app.listen(PORT, () => {
   console.log(`Pipedrive Token: ${process.env.PIPEDRIVE_API_KEY}`)
