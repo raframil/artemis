@@ -6,8 +6,9 @@ Este projeto é um teste para realizar a integração entre duas APIs, sendo uma
 
 ```
 PORT=5000
-PIPEDRIVE_API_KEY=chave-pipedrive
-BLING_API_KEY=chave-bling
+PIPEDRIVE_API_KEY=chave_pipedrive
+BLING_API_KEY=chave_bling
+MONGO_URL=url_do_banco_de_dados
 ```
 
 ## Requisitos
@@ -44,18 +45,29 @@ O projeto possui 2 endpoints com os métodos **POST** e **GET**:
     - Agrega todos os pedidos por dias, somando a quantidade de pedidos e o valor de cada um deles.
     - Caso não exista pedidos no banco, retornará o status 204.
 
-> ## Get deals from Pipedrive diagram
+
+## Diagrams
+
+> ### Get deals from Pipedrive diagram
 
 ![get deals diagram](/requirements/get-deals.png)
 
-> ## Design Patterns
+> ### Integration Pipedrive/Bling/MongoDb
+
+![integration diagram](/requirements/bling-diagram.png)
+
+> ### Aggregate Deals
+
+![aggregate diagram](/requirements/aggregate-deals.png)
+
+## Design Patterns
 
 * Factory
 * Adapter
 * Dependency Injection
 * Decorator
 
-> ## Bibliotecas e Ferramentas
+## Bibliotecas e Ferramentas
 
 * NPM
 * Typescript
