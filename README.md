@@ -2,6 +2,12 @@
 
 Este projeto é um teste para realizar a integração entre duas APIs, sendo uma do Pipedrive e a outro do Bling!. A integração deve buscar oportunidades no Pipedrive com status de ganho, recuperar as informações e inseri-las como pedidos no Bling. Além de inserir as informações em outra API, é necessário persisti-las em um banco de dados MongoDB, agregando as oportunidades por dia e valor total. Deve haver um endpoint para consulta dos dados da collection.
 
+## Executando o projeto
+
+1. Configure suas credenciais no arquivo .env, conforme documentação
+2. Execute o comando ```npm run dev```
+3. Aguarde as mensagens de sucesso para conexão e para start do servidor
+
 ## Exemplo de arquivo .env
 
 ```
