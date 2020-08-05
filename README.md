@@ -35,6 +35,15 @@ O projeto possui 2 endpoints com os métodos **POST** e **GET**:
     - Insere os negócios identificados no Pipedrive como pedidos no **[Bling](https://www.bling.com.br/home)**. 
     - Armazena os pedidos em uma collection no MongoDB.
 
+> Endpoint de agregação
+
+- Endpoint: `http://localhost:5000/deals/saved`
+  - Método: **GET**
+  - Funcionalidade: Executa uma chamada ao banco de dados MongoDb agregando todos os pedidos persistidos.
+    - Pode receber um parâmetro date na url. Não foi implementado, mas em um possível cenário a busca ocorreria apenas pela data fornecida.
+    - Agrega todos os pedidos por dias, somando a quantidade de pedidos e o valor de cada um deles.
+    - Caso não exista pedidos no banco, retornará o status 204.
+
 > ## Get deals from Pipedrive diagram
 
 ![get deals diagram](/requirements/get-deals.png)
@@ -52,9 +61,10 @@ O projeto possui 2 endpoints com os métodos **POST** e **GET**:
 * Typescript
 * Git
 * Axios
-* MongoDB
+* MongoDb
 * Mongoose
 * Eslint
 * Express
 * Standard Javascript Style
 * Ts node dev
+* js2xmlparser

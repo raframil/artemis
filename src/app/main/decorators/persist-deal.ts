@@ -16,9 +16,11 @@ export class PersistDealControllerDecorator {
     try {
       const blingOrder = await this.createBlingOrder.create(deal)
 
+      /* TODO check if blingOrder was inserted correctly
       if(blingOrder.statusText) {
         return blingOrder
       }
+      */
 
       await this.dealRepository.add(deal)
       return true

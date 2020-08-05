@@ -19,13 +19,14 @@ export class IntegrationController implements Controller {
         createdDeals.push(await this.createDeal.post(deal))
       }
 
+      /** This was mainly to check response from Bling API
       const hasUnauthorized = createdDeals.map((item) => {
         return item.status
       })
-
       if (hasUnauthorized.find(key => key === 401)) {
-        // return unauthorized()
+        return unauthorized()
       }
+       */
 
 
       return success({ message: 'Integration completed'})
