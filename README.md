@@ -24,16 +24,16 @@ O projeto possui 2 endpoints com os métodos **POST** e **GET**:
 
 > Endpoint de integração
 
-- Método: **GET**
 - Endpoint: `http://localhost:5000/deals`
-- Funcionalidade: Executa uma chamada **[Pipedrive](https://www.pipedrive.com/)** e retorna todas as oportunidades com status igual a **ganho**.
+  - Método: **GET**
+  - Funcionalidade: Executa uma chamada **[Pipedrive](https://www.pipedrive.com/)** e retorna todas as oportunidades com status igual a **ganho**.
 
-- Método **POST**
 - Endpoint: `http://localhost:5000/deals`
-- Funcionalidade: 
-  - Executa uma chamada **[Pipedrive](https://www.pipedrive.com/)** recuperando todas as oportunidades com status igual a **ganho**.
-  - Insere os negócios identificados no Pipedrive como pedidos no **[Bling](https://www.bling.com.br/home)**. 
-  - Armazena os pedidos em uma collection no MongoDB.
+  - Método **POST**
+  - Funcionalidade: 
+    - Executa uma chamada **[Pipedrive](https://www.pipedrive.com/)** recuperando todas as oportunidades com status igual a **ganho**.
+    - Insere os negócios identificados no Pipedrive como pedidos no **[Bling](https://www.bling.com.br/home)**. 
+    - Armazena os pedidos em uma collection no MongoDB.
 
 > ## Get deals from Pipedrive diagram
 
