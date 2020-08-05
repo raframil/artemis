@@ -1,19 +1,20 @@
-import mongoose, { Schema } from 'mongoose'
+import mongoose, { Schema, model } from 'mongoose'
 
-export interface IOrder extends mongoose.Document {
+interface IDeal extends mongoose.Document {
     _id: string
-    dealId: number
-    status: string
-    name?: string
-    clientName?: string
-    date: Date
-    value: number
-    currency?: string
+    dealId: number,
+    title: string,
+    clientName: string,
+    value: number,
+    currency: string,
+    date: string,
+    status: string,
+    email: string
 }
 
-const OrderSchema: Schema = new Schema({
+const DealSchema: Schema = new Schema({
   dealId: Number,
-  name: String,
+  title: String,
   clientName: String,
   status: String,
   date: {
@@ -24,7 +25,21 @@ const OrderSchema: Schema = new Schema({
     type: Number,
     required: true
   },
-  currency: String
+  currency: String,
+  email: String
 })
 
-export default mongoose.model<IOrder>('Order', OrderSchema)
+interface CreateDealModel {
+  dealId: number,
+  title: string,
+  clientName: string,
+  value: number,
+  currency: string,
+  date: string,
+  status: string,
+  email: string
+}
+
+const Deal = model<IDeal>('Deal', DealSchema)
+
+export { IDeal, Deal, CreateDealModel }

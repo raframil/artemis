@@ -3,7 +3,7 @@ import servicesConfig from '../../../config/services'
 
 export class BlingClient {
   protected readonly instance: AxiosInstance;
-  protected readonly blingConfig = servicesConfig.pipedrive
+  protected readonly blingConfig = servicesConfig.bling
 
   public constructor () {
     const baseUrl = this.blingConfig.baseUrl
@@ -16,8 +16,11 @@ export class BlingClient {
 
   private _initializeResponseInterceptor = () => {
     this.instance.interceptors.request.use(
-      this._handleError,
-      this._handleResponse
+      this._handleRequest
+    )
+
+    axios.interceptors.response.use( 
+      this._handleError
     )
   }
 
@@ -34,6 +37,11 @@ export class BlingClient {
   protected _handleError = (error: any) => Promise.reject(error);
 
   public async createOrder (body: any): Promise<AxiosResponse> {
-    return this.instance.post('/pedido/json/', body)
+      try {
+        const order = await this.instance.post('/pedido/json/?', body)
+        return order
+      } catch (error) {
+        throw error
+      }
   }
 }

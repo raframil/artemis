@@ -1,3 +1,4 @@
+import { formatDeal } from './../utils/format-deal';
 import { GetDealsRepository } from './../../data/protocols/get-deals-repository';
 import { PipedriveClient } from '../utils/pipedrive'
 import { AxiosResponse } from 'axios'
@@ -9,7 +10,7 @@ export class GetDealsService implements GetDealsRepository {
     this.pipedriveClient = pipedriveClient
   }
 
-  async get (): Promise<AxiosResponse> {
+  async get (): Promise<any> {
     const { data: response } = await this.pipedriveClient.getDeals({
       params: {
         status: 'won',
@@ -17,6 +18,8 @@ export class GetDealsService implements GetDealsRepository {
       }
     })
     const deals = response.data
-    return deals
+
+    const serializedDeals = await formatDeal(deals)
+    return serializedDeals
   }
 }

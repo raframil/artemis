@@ -1,6 +1,6 @@
 import { BlingClient } from '../utils/bling'
 import config from '../../../config/services'
-import { BuildOrder } from '../utils/buildOrderXml';
+import { BuildOrder } from '../utils/build-order-xml';
 import querystring from 'querystring'
 
 export class CreateBlingOrder {
@@ -21,12 +21,14 @@ export class CreateBlingOrder {
 
     try {
       const formData = querystring.stringify(body)
-      const response = await this.bingClient.createOrder(formData)
-
-      console.log(response)
+      const res = await this.bingClient.createOrder(formData)
     } catch (error) {
-      console.log('Error while creating an order')
-      return error
+      const blingError = {
+        status: error.response.status,
+        statusText: error.response.statusText
+      }
+      console.log(`Error while creating an order on Bling for order ${deal.dealId}`)
+      return blingError
     }
   }
 }
