@@ -19,6 +19,23 @@ BLING_API_KEY=chave-bling
 - Criar endpoint para trazer os dados consolidados da collection do MongoDB.
 
 
-### Get deals from Pipedrive diagram
+> ## Get deals from Pipedrive diagram
 
 ![get deals diagram](/requirements/get-deals.png)
+
+> ## Design Patterns
+
+* Factory
+* Adapter
+* Dependency Injection
+
+> ## Bibliotecas e Ferramentas
+
+* NPM
+* Typescript
+* Git
+* MongoDB
+* Eslint
+* Express
+* Standard Javascript Style
+* Ts-node-dev
