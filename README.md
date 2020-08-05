@@ -71,6 +71,7 @@ O projeto possui 2 endpoints com os métodos **POST** e **GET**:
 
 * NPM
 * Typescript
+* Docker
 * Git
 * Axios
 * MongoDb
