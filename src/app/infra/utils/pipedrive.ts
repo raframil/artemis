@@ -1,12 +1,12 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
-import servicesConfig from '../../config/services'
+import config from '../../../config/services'
 
 export class PipedriveClient {
   protected readonly instance: AxiosInstance;
-  protected readonly pipedrive = servicesConfig.pipedrive
+  protected readonly pipedriveConfig = config.pipedrive
 
   public constructor () {
-    const baseUrl = this.pipedrive.baseUrl
+    const baseUrl = this.pipedriveConfig.baseUrl
     this.instance = axios.create({
       baseURL: baseUrl
     })
@@ -24,7 +24,7 @@ export class PipedriveClient {
   private _handleRequest = (config: AxiosRequestConfig) => {
     config.params = {
       ...config.params,
-      api_token: this.pipedrive.token
+      api_token: this.pipedriveConfig.token
     }
     return config
   }
@@ -32,6 +32,6 @@ export class PipedriveClient {
   protected _handleError = (error: any) => Promise.reject(error);
 
   public async getDeals (params: any): Promise<AxiosResponse> {
-    return this.instance.get('/deals/timeline', params)
+    return this.instance.get('/deals/', params)
   }
 }
