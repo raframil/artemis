@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/raframil/artemis#readme",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "git-commit-msg-linter": "^2.4.4",
